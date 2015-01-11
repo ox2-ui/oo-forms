@@ -1,0 +1,68 @@
+template(name="ooInput")
+  div(oo-Form-Item="{{oo}} {{noticeStatus}} {{charLimitStatus}} {{updateStatus}}")
+    label(for="{{inputId}}") {{label}}
+      span.updateStatus {{updateMessage}}
+    input(type="{{type}}" placeholder="{{placeholder}}" id="{{inputId}}" value="{{value}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}")
+    .status
+      .notice {{noticeMessage}}
+      if charLimit
+        .limit {{charCount}} / {{charLimit}}
+
+template(name="ooToggle")
+  div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")
+    div(item-title="") {{label}}
+    label(toggle="{{ooToggleStyle}}")
+      input(type="checkbox" checked="{{valueHelper}}" id="{{inputId}}")
+      .track
+        .handle
+
+template(name="ooFormButton")
+  button(btn="{{btn}}" formType="{{formType}}" formId="{{formId}}" collection="{{collection}}" docId="{{docId}}" ) {{btnName}}
+
+template(name="ooCheckmark")
+  if isChecked
+    button.js-unCheck(btn="small circle action push:top:1.3")
+      i.ico-checkmark
+  else
+    button.js-check(btn="small circle neutral-light push:top:1.3")
+      i.ico-checkmark
+
+//- dianaId="{{dianaId}}" collection="{{collection}}" docId="{{docId}}" fieldValue="{{fieldValue}}" fieldName="{{fieldName}}" title="{{title}}"
+template(name="ooItemDesription")
+  div(item="inside-form no-bottom border:solid" oo-Color="")
+    div(item-title="") {{title}}
+    button.js-openFroalaEditor(btn="small action raised") Edit
+  if fieldValue
+    .cms-desc-preview.markdown-component-area(oo-Color="back:white") {{{fieldValue}}}
+//- picture="{{picture}}" collection="{{collection}}" docId="{{docId}}" uploadType="{{uploadType}}"
+template(name="ooItemPicture")
+  .cms-editor-picture-wrapper()
+    if picture
+      img.cms-editor-picture(src=picture)
+    else
+      button(btn="circle neutral large" disabled)
+        i.ico-user
+    +uploadCare docId=docId collection=collection uploadType=uploadType
+
+//- selectColor, selectName, collection, docId, activeIndex, templateName
+template(name="ooSelect")
+  div(item="no-edge:right rounded push:bottom" class="{{selectColor}} text-punch")
+    div(item-title="medium uppercase push" oo-Color="text:clear") {{selectName}}
+    button.js-openSelect(btn="small clip white push-right") Change
+
+//- inline, btnName
+template(name="ooMultiSelect")
+  +Surface size='[undefined,true]' template='ooMultiSelectButton'
+  if innner
+    +SequentialLayout
+      +famousEach selectData
+        +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
+  else
+    +famousEach selectData
+      +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
+
+template(name="ooMultiSelectButton")
+  div(item="inside-form no-bottom border:solid" oo-Color="")
+    div(item-title="") {{btnTitle}}
+    button.js-openSelectModal(btn="small action raised") {{btnName}}
+

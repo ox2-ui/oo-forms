@@ -1,0 +1,472 @@
+@import "oo-color-variables.import.less";
+@import "oo-font-variables.import.less";
+
+.oo-form-holder {
+  min-height: 200px;
+  padding: 2rem;
+}
+
+.oo-form-grid {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+
+input[oo] {
+  background-color: transparent;
+  box-sizing: content-box;
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+  border: 1px solid @backdrop;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  outline: none;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: .6rem;
+  padding-bottom: .8rem;
+  font-family: @roboto;
+  font-weight: 400;
+  color: @neutral-dark;
+}
+
+input[oo]:focus {
+  outline: none;
+  border-color: @brand;
+  border-color: @neutral-dark;
+  transition: border-color .4s;
+  border-width: 1px;
+}
+
+[oo-Form-Item] {
+
+  input {
+    background-color: transparent;
+    box-sizing: content-box;
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    border: 1px solid @backdrop;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: .6rem;
+    padding-bottom: .8rem;
+    font-family: @roboto;
+    font-weight: 400;
+    color: @neutral-dark;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: @brand;
+    border-color: @neutral-dark;
+    transition: border-color .4s;
+    border-width: 1px;
+  }
+
+  input::placeholder {
+    color: @backdrop;
+  }
+}
+
+input[oo~="classic"] {
+  border: 1px solid @neutral-light;
+  padding: .5rem .8rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  border-radius: 3px;
+}
+
+input[oo~="classic"]:focus {
+  border-width: 1px;
+}
+
+
+// Placeholder for colored background inputs
+input[oo]::placeholder {
+  color: @backdrop;
+}
+
+
+@button-color-list: "white", "warning", "critical", "action", "item", "backdrop", "item-alt", "backdrop-alt", "neutral", "neutral-tint", "neutral-light", "neutral-dim", "neutral-dark", "brand", "action", "warning", "critical", "positive", "negative", "primary-header", "action-menu", "action-menu-items", "main-menu-header", "main-menu-items", "main-menu-button";
+@button-color-list-lenght: length(@button-color-list);
+
+
+.create-colored-buttons(@counter) when (@counter > 0) {
+  .create-colored-buttons((@counter - 1));
+  @value: extract(@button-color-list, @counter);
+
+  // Input focus border highlight
+  input[oo~="focus:@{value}"]:focus {
+    outline: none;
+    border-color: @@value;
+  }
+
+  [oo-Form-Item~="material"] {
+    input[oo~="focus:@{value}"]:focus {
+      border-color: @@value;
+      border-width: 1px;
+    }
+  }
+
+  // Input focus border and text highlighted
+  input[oo~="focus+text:@{value}"]:focus {
+    outline: none;
+    border-color: @@value;
+    color: @@value;
+  }
+
+  // Input background colors
+  input[oo~="@{value}"] {
+    background-color: @@value;
+    border-color: @@value;
+    color: white;
+  }
+
+  // darkened borders on colored inputs
+  input[oo~="@{value}"]:focus {
+    border-color: darken(@@value, 10%);
+  }
+
+  // Placeholder for colored background inputs
+  input[oo~="@{value}"]::placeholder {
+     color: rgba(255, 255, 255, 0.5);
+  }
+
+}
+
+.create-colored-buttons(@button-color-list-lenght);
+
+//
+//      Border width
+//
+
+input[oo~="border:1"] {
+  border-width: 1px;
+}
+
+input[oo~="border:2"] {
+  border-width: 2px; // Default
+}
+
+input[oo~="border:3"] {
+  border-width: 3px;
+}
+
+//
+//      Shapes
+//
+
+
+input[oo~="rounded"] {
+  border-radius: 10px;
+}
+
+input[oo~="pill"] {
+  border-radius: 20px;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+
+input[oo~="circle"] {
+  border-radius: 50%;
+}
+
+input[oo~="sharp"] {
+  border-radius: 0;
+}
+
+input[oo~="sharp-left"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+input[oo~="sharp-right"] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+[oo-Form-Item~="classic"] {
+  label {
+    margin: .3rem;
+    color: @neutral-dark;
+  }
+
+  input {
+    // from input[oo~="classic"]
+    border: 1px solid @neutral-light;
+    padding: .5rem .8rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    border-radius: 3px;
+  }
+
+}
+
+[oo-Form-Item] {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: .5rem 0;
+  margin-bottom: 0;
+
+  label {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: @roboto;
+    margin: 0;
+    color: @neutral;
+  }
+
+  .status {
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-family: @roboto;
+    margin-top: .3rem;
+    color: @neutral;
+    user-select: none;
+    cursor: default;
+    display: flex;
+    min-height: 1.9rem;
+  }
+
+  .notice {
+    overflow: hidden;
+    visibility: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    flex: 1;
+    margin-right: .3rem;
+    transition: color .4s;
+  }
+
+  .limit {
+    transition: color .4s;
+    // visibility: hidden;
+  }
+
+  .updateStatus {
+    transition: color .4s;
+    // visibility: hidden;
+  }
+}
+
+
+[oo-Form-Item~="limit:critical"] {
+
+  input {
+    border-color: @critical;
+  }
+
+  input:focus {
+    border-color: @critical;
+  }
+
+  .limit {
+    color: @critical;
+  }
+}
+
+[oo-Form-Item~="limit:warning"] {
+
+  .limit {
+    color: @warning;
+  }
+}
+
+[oo-Form-Item~="update:success"] {
+
+  input {
+    border-color: @action;
+  }
+
+  input:focus {
+    border-color: @action;
+  }
+
+  .updateStatus {
+    color: @action;
+  }
+}
+
+[oo-Form-Item~="update:warning"] {
+
+  .updateStatus {
+    color: @warning;
+  }
+}
+
+[oo-Form-Item~="update:critical"] {
+
+  input {
+    border-color: @critical;
+  }
+
+  input:focus {
+    border-color: @critical;
+  }
+
+  .updateStatus {
+    color: @critical;
+  }
+}
+
+[oo-Form-Item~="notice:critical"] {
+
+  input {
+    border-color: @critical;
+  }
+
+  input:focus {
+    border-color: @critical;
+  }
+
+  .notice {
+    visibility: visible;
+    color: @critical;
+  }
+}
+
+[oo-Form-Item~="notice:warning"] {
+
+  input {
+    border-color: @warning;
+  }
+
+  input:focus {
+    border-color: @warning;
+  }
+
+  .notice {
+    visibility: visible;
+    color: @warning;
+  }
+}
+
+[oo-Form-Item~="notice:success"] {
+
+  input {
+    border-color: @action;
+  }
+
+  input:focus {
+    border-color: @action;
+  }
+
+  .notice {
+    visibility: visible;
+    color: @action;
+  }
+}
+
+[oo-Form-Item~="push:left"] {
+  margin-left: 1rem;
+}
+
+[oo-Form-Item~="s:1"] {
+  flex-grow: 1; // Default
+}
+
+[oo-Form-Item~="s:2"] {
+  flex-grow: 2;
+}
+
+[oo-Form-Item~="s:3"] {
+  flex-grow: 3;
+}
+
+[oo-Form-Item~="s:4"] {
+  flex-grow: 4;
+}
+
+[oo-Form-Group] {
+  display: flex;
+  flex-direction: column;
+}
+
+[oo-Form-Group~="horizontal"] {
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  [oo-Form-Item] {
+    flex-basis: 150px;
+  }
+
+  [oo-Form-Item~="basis:30"] {
+    flex-basis: 30px;
+  }
+
+  [oo-Form-Item~="basis:50"] {
+    flex-basis: 50px;
+  }
+}
+
+
+[oo-Form-Group~="center"] {
+  justify-content: center;
+}
+
+[oo-Form-Group~="spaced"] {
+  padding: 2rem;
+}
+
+[oo-Checkmark-Control] {
+  display: flex;
+
+}
+
+
+
+[oo-Form-Item~="horizontal"] {
+  flex-direction: row;
+  align-items: center;
+
+  label {
+    margin: 0 .7rem;
+  }
+}
+
+[oo-Form-Item~="center"] {
+  align-items: center;
+}
+
+[oo-Form-Item~="start"] {
+  align-items: flex-start;
+}
+
+[oo-Form-Item~="end"] {
+  align-items: flex-end;
+}
+
+
+// [oo-Form-Item~="push"] {
+//   margin: 0 1rem;
+// }
+
+// [oo-Form-Item~="push-left"] {
+//   margin-left: 1rem;
+// }
+
+// [oo-Form-Item~="push-right"] {
+//   margin-right: 1rem;
+// }
+
+// [oo-Form-Item~="push-top"] {
+//   margin-top: 1rem;
+// }
+
+// [oo-Form-Item~="push-bottom"] {
+//   margin-bottom: 1rem;
+// }
+
+// [oo-Form-Item~="push-all"] {
+//   margin: 1rem;
+// }
