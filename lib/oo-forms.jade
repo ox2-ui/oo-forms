@@ -8,6 +8,10 @@ template(name="ooInput")
       if charLimit
         .limit {{charCount}} / {{charLimit}}
 
+template(name="ooTextarea")
+  div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")
+    textarea.js-enableTouch(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}") {{fieldValue}}
+
 template(name="ooToggle")
   div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")
     div(item-title="") {{label}}
