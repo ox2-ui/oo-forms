@@ -71,10 +71,13 @@ template(name="ooMultiSelectButton")
     button.js-openSelectModal(btn="small action raised") {{btnName}}
 
 template(name="ooMonthSlider")
-  div {{renderedHelper}}
-    +Scrollview size='[undefined,undefined]' direction="X" paginated="true" id=scrollViewId
-      +famousEach dataMonths
-        +Surface size='[undefined,true]' template='ooMonthSliderContent'
-
-template(name="ooMonthSliderContent")
-  h5 {{this}}
+  div
+    if firstItem
+      button Done
+    else
+      button.js-goToPreviuos Back
+    h4 {{currentValue}}
+    if lastItem
+      button Done
+    else
+      button.js-goToNext Foward
