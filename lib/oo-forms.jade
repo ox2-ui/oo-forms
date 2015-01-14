@@ -69,3 +69,12 @@ template(name="ooMultiSelectButton")
   div(item="inside-form no-bottom border:solid" oo-Color="")
     div(item-title="") {{btnTitle}}
     button.js-openSelectModal(btn="small action raised") {{btnName}}
+
+template(name="ooMonthSlider")
+  div {{renderedHelper}}
+    +Scrollview size='[undefined,undefined]' direction="X" paginated="true" id=scrollViewId
+      +famousEach dataMonths
+        +Surface size='[undefined,true]' template='ooMonthSliderContent'
+
+template(name="ooMonthSliderContent")
+  h5 {{this}}
