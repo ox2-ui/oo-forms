@@ -71,13 +71,17 @@ template(name="ooMultiSelectButton")
     button.js-openSelectModal(btn="small action raised") {{btnName}}
 
 template(name="ooMonthSlider")
-  div(style="display:flex")
+  .ooMonth-slider
     if firstItem
-      button Done
+      button(btn="block-v transparent" oo-Color="text:neutral-light" disabled)
+        i.ico-chevron-left
     else
-      button.js-goToPreviuos Back
-    h4 {{currentValue}}
+      button.js-goToPreviuos(btn="block-v transparent" oo-Color="text:neutral-dim")
+        i.ico-chevron-left
+    .title {{currentValue}}
     if lastItem
-      button Done
+      button(btn="block-v transparent" oo-Color="text:neutral-light" disabled)
+        i.ico-chevron-right
     else
-      button.js-goToNext Foward
+      button.js-goToNext(btn="block-v transparent" oo-Color="text:neutral-dim")
+        i.ico-chevron-right

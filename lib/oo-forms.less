@@ -1,6 +1,21 @@
 @import "oo-color-variables.import.less";
 @import "oo-font-variables.import.less";
 
+.ooMonth-slider {
+  height: 34px;
+  background-color: @item;
+  display: flex;
+  align-items: center;
+
+  .title {
+    flex: 1;
+    font-family: @condensed;
+    font-size: 1.5rem;
+    text-align: center;
+    color: @neutral-dim;
+  }
+}
+
 .oo-form-holder {
   min-height: 200px;
   padding: 2rem;
@@ -17,7 +32,7 @@ input[oo] {
   box-sizing: content-box;
   font-size: 1.6rem;
   line-height: 1.5rem;
-  border: 1px solid @backdrop;
+  border: 1px solid @neutral-tint;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -47,7 +62,7 @@ input[oo]:focus {
     box-sizing: content-box;
     font-size: 1.6rem;
     line-height: 1.5rem;
-    border: 1px solid @backdrop;
+    border: 1px solid @neutral-tint;
     border-left: none;
     border-right: none;
     border-top: none;
@@ -71,12 +86,12 @@ input[oo]:focus {
   }
 
   input::placeholder {
-    color: @backdrop;
+    color: @neutral-faded;
   }
 }
 
 input[oo~="classic"] {
-  border: 1px solid @neutral-light;
+  border: 1px solid @neutral-faded;
   padding: .5rem .8rem;
   font-size: 1.3rem;
   line-height: 1.8rem;
@@ -90,7 +105,7 @@ input[oo~="classic"]:focus {
 
 // Placeholder for colored background inputs
 input[oo]::placeholder {
-  color: @backdrop;
+  color: @neutral-tint;
 }
 
 
@@ -201,7 +216,7 @@ input[oo~="sharp-right"] {
 
   input {
     // from input[oo~="classic"]
-    border: 1px solid @neutral-light;
+    border: 1px solid @neutral-faded;
     padding: .5rem .8rem;
     font-size: 1.3rem;
     line-height: 1.8rem;
