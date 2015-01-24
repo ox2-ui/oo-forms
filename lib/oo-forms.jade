@@ -8,9 +8,13 @@ template(name="ooInput")
       if charLimit
         .limit {{charCount}} / {{charLimit}}
 
+template(name="ooNativeScroller")
+  div.js-enableTouch.js-noEdgeDrag.oo-NativeScroller
+    +Template.contentBlock
+
 template(name="ooTextarea")
-  div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")
-    textarea.js-enableTouch(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}") {{fieldValue}}
+  //- div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")
+  textarea.js-enableTouch.js-textarea(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}" autoresize) {{fieldValue}}
 
 template(name="ooToggle")
   div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")

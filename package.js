@@ -27,6 +27,6 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('ox2:buttons');
-  api.addFiles('tests/00-buttons-tests.js');
+  api.use('ox2:forms');
+  api.addFiles('tests/oo-forms-tests.js');
 });
