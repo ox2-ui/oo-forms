@@ -9,7 +9,7 @@ template(name="ooInput")
         .limit {{charCount}} / {{charLimit}}
 
 template(name="ooNativeScroller")
-  div.js-enableTouch.js-noEdgeDrag.oo-NativeScroller
+  div.js-enableTouch.js-noEdgeDrag(oo-NativeScroller="{{oo}}")
     +Template.contentBlock
 
 template(name="ooTextarea")
