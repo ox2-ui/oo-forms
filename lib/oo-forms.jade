@@ -13,9 +13,14 @@ template(name="ooNativeScroller")
     +Template.contentBlock
 
 template(name="ooTextarea")
-  //- div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")
-  textarea.js-enableTouch.js-textarea(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}" autoresize) {{fieldValue}}
-  //- textarea.js-enableTouch.js-textarea(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}" autoresize) {{fieldValue}}
+  div(oo-Form-Item="{{oo}} {{noticeStatus}} {{charLimitStatus}} {{updateStatus}}")
+    label(for="{{inputId}}") {{label}}
+      span.updateStatus {{updateMessage}}
+    textarea.js-enableTouch.js-textarea(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}" autoresize) {{fieldValue}}
+    .status
+      .notice {{noticeMessage}}
+      if charLimit
+        .limit {{charCount}} / {{charLimit}}
 
 template(name="ooToggle")
   div(item=" {{itemStyle}}" oo-Color="{{ooItemTheme}}")

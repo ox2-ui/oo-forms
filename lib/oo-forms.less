@@ -41,7 +41,7 @@ textarea[autoresize] {
   background-color: @white;
 }
 
-[oo-NativeScroller~="push:20"] {
+[oo-NativeScroller~="push"] {
   padding: 2rem;
 }
 
@@ -101,7 +101,7 @@ input[oo]:focus {
 
 [oo-Form-Item] {
 
-  input {
+  input, textarea {
     background-color: transparent;
     box-sizing: content-box;
     font-size: 1.6rem;
@@ -121,7 +121,7 @@ input[oo]:focus {
     color: @neutral-dark;
   }
 
-  input:focus {
+  input:focus, textarea:focus {
     outline: none;
     border-color: @brand;
     border-color: @neutral-dark;
@@ -129,7 +129,7 @@ input[oo]:focus {
     border-width: 1px;
   }
 
-  input::placeholder {
+  input::placeholder, textarea::placeholder {
     color: @neutral-faded;
   }
 }
