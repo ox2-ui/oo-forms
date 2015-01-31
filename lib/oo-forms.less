@@ -1,18 +1,6 @@
 @import "oo-color-variables.import.less";
 @import "oo-font-variables.import.less";
 
-textarea[autoresize] {
-  display: block;
-  overflow: hidden;
-  resize: none;
-  height: 31px;
-  outline: none;
-  // position: absolute;
-  top: 0;
-  word-break: break-all;
-  transition: height .3s ease;
-}
-
 // .js-textarea {
 //   transition: height .3s !important;
 // }
@@ -119,6 +107,22 @@ input[oo]:focus {
     font-family: @roboto;
     font-weight: 400;
     color: @neutral-dark;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  textarea[autoresize] {
+    display: block;
+    overflow: hidden;
+    resize: none;
+    height: 31px;
+    outline: none;
+    // position: absolute;
+    top: 0;
+    word-break: break-all;
+    transition: height .3s ease;
   }
 
   input:focus, textarea:focus {

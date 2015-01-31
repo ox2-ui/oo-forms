@@ -2,7 +2,10 @@ template(name="ooInput")
   div(oo-Form-Item="{{oo}} {{noticeStatus}} {{charLimitStatus}} {{updateStatus}}")
     label(for="{{inputId}}") {{label}}
       span.updateStatus {{updateMessage}}
-    input(type="{{type}}" placeholder="{{placeholder}}" id="{{inputId}}" value="{{value}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}")
+    if multiline
+      textarea.js-enableTouch.js-textarea(id="{{inputId}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}" autoresize="{{autoResize}}" style="height:{{minHeight}}px") {{value}}
+    else
+      input(type="{{type}}" placeholder="{{placeholder}}" id="{{inputId}}" value="{{value}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}")
     .status
       .notice {{noticeMessage}}
       if charLimit
