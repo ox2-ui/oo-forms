@@ -12,10 +12,8 @@ template(name="ooInput")
         .limit {{charCount}} / {{charLimit}}
 
 template(name="ooFormWrapper")
-  div.oo-form-holder(oo-Color="back:white")
-    div(oo-Form-Group)
-      form(id="#{{formId}}")
-        +Template.contentBlock
+  form(id="#{{formId}}")
+    +Template.contentBlock
 
 template(name="ooNativeScroller")
   div.js-enableTouch.js-noEdgeDrag(oo-NativeScroller="{{oo}}")
