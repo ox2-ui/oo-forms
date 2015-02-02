@@ -73,16 +73,6 @@ template(name="ooSelect")
     div(item-title="medium uppercase push" oo-Color="text:clear") {{selectName}}
     button.js-openSelect(btn="small action raised") Change
 
-//- inline, btnName
-template(name="ooMultiSelectFamous")
-  +Surface size='[undefined,true]' template='ooMultiSelectButton'
-  if innner
-    +SequentialLayout
-      +famousEach selectData
-        +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
-  else
-    +famousEach selectData
-      +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
 
 template(name="ooMultiSelect")
   +ooMultiSelectButton
@@ -98,6 +88,19 @@ template(name="ooMultiSelectButton")
   div(item="inside-form no-bottom border:solid" oo-Color="")
     div(item-title="") {{btnTitle}}
     button.js-openSelectModal(btn="small action raised") {{btnName}}
+
+
+//- inline, btnName
+template(name="ooMultiSelectFamous")
+  +Surface size='[undefined,true]' template='ooMultiSelectButton'
+  if innner
+    +SequentialLayout
+      +famousEach selectData
+        +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
+  else
+    +famousEach selectData
+      +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
+
 
 template(name="ooMonthSlider")
   .ooMonth-slider
