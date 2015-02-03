@@ -67,6 +67,22 @@ template(name="ooItemPicture")
         i.ico-user
     +uploadCare docId=docId collection=collection uploadType=uploadType
 
+template(name="ooPicture2Uri")
+  .cms-editor-picture-wrapper()
+    if picture
+      img.cms-editor-picture(src=picture)
+    else
+      button(btn="neutral large" disabled)
+        i.ico-user
+    div(item="inside-form" oo-Color="")
+      button(btn="small action raised")
+        label(for="{{inputId}}")
+          if picture
+            | Change
+          else
+            | Upload
+        input(id="{{inputId}}" style="display:none;" type="file")
+
 //- selectColor, selectName, collection, docId, activeIndex, templateName
 template(name="ooSelect")
   div(item="inside-form no-edge:right rounded push:bottom" class="{{selectColor}} text-punch")
