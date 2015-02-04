@@ -70,7 +70,7 @@ template(name="ooItemPicture")
 template(name="ooPicture2Uri")
   .cms-editor-picture-wrapper()
     if picture
-      img.cms-editor-picture(src=picture)
+      img.cms-editor-picture(src="{{imageHelper}}")
     else
       button(btn="neutral large" disabled)
         i.ico-user
