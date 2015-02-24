@@ -3,9 +3,9 @@ template(name="ooInput")
     label(for="{{inputId}}") {{label}}
       span.updateStatus {{updateMessage}}
     if multiline
-      textarea.js-enableTouch.js-textarea(id="{{inputId}}" placeholder="{{placeholder}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}" autoresize="{{autoResize}}" style="height:{{minHeight}}px") {{value}}
+      textarea.js-textarea(id="{{inputId}}" placeholder="{{placeholder}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}" autoresize="{{autoResize}}" style="height:{{minHeight}}px") {{value}}
     else
-      input.js-enableTouch(type="{{type}}" placeholder="{{placeholder}}" id="{{inputId}}" value="{{value}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}")
+      input(type="{{type}}" placeholder="{{placeholder}}" id="{{inputId}}" value="{{value}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}")
     .status
       .notice {{noticeMessage}}
       if charLimit
@@ -18,14 +18,14 @@ template(name="ooFormWrapper")
         +Template.contentBlock
 
 template(name="ooNativeScroller")
-  div.js-enableTouch.js-noEdgeDrag(oo-NativeScroller="{{oo}}")
+  div.js-noEdgeDrag(oo-NativeScroller="{{oo}}")
     +Template.contentBlock
 
 template(name="ooTextarea")
   div(oo-Form-Item="{{oo}} {{noticeStatus}} {{charLimitStatus}} {{updateStatus}}")
     label(for="{{inputId}}") {{label}}
       span.updateStatus {{updateMessage}}
-    textarea.js-enableTouch.js-textarea(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}" autoresize) {{fieldValue}}
+    textarea.js-textarea(id="{{inputId}}" rows="{{rows}}" placeholder="{{placeholder}}" maxlength="{{#if charLimit}} {{charLimit}} {{/if}}" autoresize) {{fieldValue}}
     .status
       .notice {{noticeMessage}}
       if charLimit
