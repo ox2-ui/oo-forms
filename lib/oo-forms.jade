@@ -18,8 +18,9 @@ template(name="ooFormWrapper")
         +Template.contentBlock
 
 template(name="ooNativeScroller")
-  div.js-noEdgeDrag(oo-NativeScroller="{{oo}}")
-    +Template.contentBlock
+  div.js-noEdgeDrag(oo-NativeScroller="{{oo}}" class='{{topShadow}} {{bottomShadow}}' )
+    .oo-NativeScroller--fake-height
+      +Template.contentBlock
 
 template(name="ooTextarea")
   div(oo-Form-Item="{{oo}} {{noticeStatus}} {{charLimitStatus}} {{updateStatus}}")
