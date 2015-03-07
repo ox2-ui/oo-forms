@@ -100,7 +100,7 @@ input[oo]:focus {
 }
 
 input[oo~="classic"] {
-  border: 1px solid @neutral-faded;
+  border: 1px solid @neutral-tint;
   padding: .5rem .8rem;
   font-size: 1.3rem;
   line-height: 1.8rem;
@@ -114,7 +114,7 @@ input[oo~="classic"]:focus {
 
 // Placeholder for colored background inputs
 input[oo]::placeholder {
-  color: @neutral-tint;
+  color: @neutral;
 }
 
 
@@ -181,6 +181,14 @@ input[oo~="border:2"] {
 
 input[oo~="border:3"] {
   border-width: 3px;
+}
+
+//
+//      Flex
+//
+
+input[oo~="flex:1"] {
+  flex: 1;
 }
 
 //
@@ -401,6 +409,10 @@ input[oo~="sharp-right"] {
 
 [oo-Form-Item~="push:left"] {
   margin-left: 1rem;
+}
+
+[oo-Form-Item~="push:left:small"] {
+  margin-left: .5rem;
 }
 
 [oo-Form-Item~="s:1"] {
