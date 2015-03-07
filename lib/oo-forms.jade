@@ -11,6 +11,10 @@ template(name="ooInput")
       if charLimit
         .limit {{charCount}} / {{charLimit}}
 
+template(name="ooAutoInsertInput")
+  input(oo="classic sharp flex:1" type="text" placeholder="{{placeholder}}")
+  button.js-addNewLocation(btn="tiny action push-left push-right raised") {{btnName}}
+
 template(name="ooFormWrapper")
   div.oo-form-holder(oo-Color="back:white")
     div(oo-Form-Group)
