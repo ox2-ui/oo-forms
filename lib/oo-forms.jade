@@ -12,7 +12,7 @@ template(name="ooInput")
         .limit {{charCount}} / {{charLimit}}
 
 template(name="ooAutoInsertInput")
-  input(oo="classic sharp flex:1" type="text" placeholder="{{placeholder}}")
+  input.js-autoInsertInput(oo="classic sharp flex:1" type="text" placeholder="{{placeholder}}")
   button.js-addNewLocation(btn="tiny action push-left push-right raised") {{btnName}}
 
 template(name="ooFormWrapper")
