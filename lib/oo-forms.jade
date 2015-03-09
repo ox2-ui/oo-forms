@@ -87,7 +87,8 @@ template(name="ooPicture2Uri")
 template(name="ooSelect")
   div(item="inside-form no-edge:right rounded push:bottom" class="{{selectColor}} text-punch")
     div(item-title="medium uppercase push" oo-Color="text:clear") {{selectName}}
-    button.js-openSelect(btn="small action raised") {{#if btnName}} {{btnName}} {{else}} Change {{/if}}
+    unless disableBtn
+      button.js-openSelect(btn="small action raised") {{#if btnName}} {{btnName}} {{else}} Change {{/if}}
 
 
 template(name="ooMultiSelect")
