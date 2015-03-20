@@ -518,3 +518,174 @@ input[oo~="sharp-right"] {
 // [oo-Form-Item~="push-all"] {
 //   margin: 1rem;
 // }
+
+// FROM MATERIALIZE CSS
+
+/***************
+  Radio Buttons
+***************/
+/* Remove default Radio Buttons */
+[type="radio"]:not(:checked), [type="radio"]:checked {
+  position: absolute;
+  left: -9999px; }
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  transition: 0.28s ease;
+  user-select: none;
+}
+
+[type="radio"] + label:before, [type="radio"] + label:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  transition: 0.28s ease; }
+
+/* Unchecked styles */
+[type="radio"]:not(:checked) + label:before {
+  border-radius: 50%;
+  border: 2px solid #5a5a5a; }
+
+[type="radio"]:not(:checked) + label:after {
+  border-radius: 50%;
+  border: 2px solid #5a5a5a;
+  z-index: -1;
+  transform: scale(0); }
+
+/* Checked styles */
+[type="radio"]:checked + label:before {
+  border-radius: 50%;
+  border: 2px solid transparent; }
+
+[type="radio"]:checked + label:after {
+  border-radius: 50%;
+  border: 2px solid #26a69a;
+  background-color: #26a69a;
+  z-index: 0;
+  transform: scale(1.02); }
+
+/* Radio With gap */
+[type="radio"].with-gap:checked + label:before {
+  border-radius: 50%;
+  border: 2px solid #26a69a; }
+
+[type="radio"].with-gap:checked + label:after {
+  border-radius: 50%;
+  border: 2px solid #26a69a;
+  background-color: #26a69a;
+  z-index: 0;
+  transform: scale(0.5); }
+
+/* Disabled style */
+[type="radio"]:disabled:not(:checked) + label:before, [type="radio"]:disabled:checked + label:before {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.26); }
+
+[type="radio"]:disabled + label {
+  color: rgba(0, 0, 0, 0.26); }
+
+[type="radio"]:disabled:not(:checked) + label:hover:before {
+  border-color: rgba(0, 0, 0, 0.26); }
+
+/***************
+   Checkboxes
+***************/
+/* CUSTOM CSS CHECKBOXES */
+form p {
+  margin-bottom: 10px;
+  text-align: left; }
+
+form p:last-child {
+  margin-bottom: 0px; }
+
+/* Remove default checkbox */
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px; }
+
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* checkbox aspect */
+[type="checkbox"] + label:before {
+  content: '';
+  position: absolute;
+  margin-top: 2px;
+  left: 0;
+  z-index: 0;
+  border-radius: 1px;
+  background-clip: padding-box;
+  transition: 0.2s;
+}
+
+/* Unchecked styles */
+[type="checkbox"]:not(:checked) + label:before {
+  top: 0px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #5a5a5a; }
+
+/* Checked styles */
+[type="checkbox"]:checked + label:before {
+  left: -3px;
+  top: -4px;
+  width: 12px;
+  height: 22px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #26a69a;
+  border-bottom: 2px solid #26a69a;
+  transform: rotateZ(40deg);
+  -webkit-backface-visibility: hidden;
+  transform-origin: 100% 100%; }
+
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before {
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.26);
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.26);
+  transform: rotateZ(0deg); }
+
+[type="checkbox"]:disabled:checked + label:before {
+  left: -3px;
+  top: -4px;
+  width: 12px;
+  height: 22px;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid rgba(0, 0, 0, 0.26);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.26);
+  transform: rotateZ(40deg);
+  -webkit-backface-visibility: hidden;
+  transform-origin: 100% 100%; }
+
+[type="checkbox"]:disabled:checked + label {
+  color: rgba(0, 0, 0, 0.26); }
+
+[type="checkbox"]:disabled:not(:checked) + label:hover:before {
+  border-color: rgba(0, 0, 0, 0.26); }
+
+
