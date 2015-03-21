@@ -570,20 +570,20 @@ input[oo~="sharp-right"] {
 
 [type="radio"]:checked + label:after {
   border-radius: 50%;
-  border: 2px solid #26a69a;
-  background-color: #26a69a;
+  border: 2px solid @action;
+  background-color: @action;
   z-index: 0;
   transform: scale(1.02); }
 
 /* Radio With gap */
 [type="radio"].with-gap:checked + label:before {
   border-radius: 50%;
-  border: 2px solid #26a69a; }
+  border: 2px solid @action; }
 
 [type="radio"].with-gap:checked + label:after {
   border-radius: 50%;
-  border: 2px solid #26a69a;
-  background-color: #26a69a;
+  border: 2px solid @action;
+  background-color: @action;
   z-index: 0;
   transform: scale(0.5); }
 
@@ -652,8 +652,8 @@ form p:last-child {
   height: 22px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
-  border-right: 2px solid #26a69a;
-  border-bottom: 2px solid #26a69a;
+  border-right: 2px solid @action;
+  border-bottom: 2px solid @action;
   transform: rotateZ(40deg);
   -webkit-backface-visibility: hidden;
   transform-origin: 100% 100%; }
