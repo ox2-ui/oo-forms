@@ -3,7 +3,7 @@ template(name="ooInput")
     label(for="{{inputId}}") {{label}}
       span.updateStatus {{updateMessage}}
     if multiline
-      textarea.js-textarea(id="{{inputId}}" placeholder="{{placeholder}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}" autoresize="{{autoResize}}" style="height:{{minHeight}}px") {{value}}
+      textarea.js-textarea(id="{{inputId}}" placeholder="{{placeholder}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}" autoresize="{{autoResize}}" style="height:{{minHeight}}px" autofocus="{{autofocus}}") {{value}}
     else
       input(type="{{type}}" placeholder="{{placeholder}}" id="{{inputId}}" value="{{value}}" maxlength="{{#if forceCharLimit}} {{charLimit}} {{/if}}")
     .status
