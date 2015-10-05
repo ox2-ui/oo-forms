@@ -19,8 +19,6 @@ Package.onUse(function(api) {
   api.use([
     'lauricio:less-autoprefixer@2.5.0_3','mquandalle:jade@0.4.1'
     ]);
-  api.addFiles('lib/oo-color-variables.import.less', C);
-  api.addFiles('lib/oo-font-variables.import.less', C);
   api.addFiles('lib/oo-forms.jade', C);
   api.addFiles('lib/oo-forms.js', C);
   api.addFiles('lib/oo-forms.less', C);
