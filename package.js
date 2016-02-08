@@ -17,7 +17,7 @@ Package.onUse(function(api) {
     ]);
   // 3rd party
   api.use([
-    'lauricio:less-autoprefixer@2.5.0_3','mquandalle:jade@0.4.1'
+    'lauricio:less-autoprefixer@2.5.0_3','mquandalle:jade@0.4.1','vazco:universe-html-purifier@1.2.3'
     ]);
   api.addFiles('lib/oo-forms.jade', C);
   api.addFiles('lib/oo-forms.js', C);
