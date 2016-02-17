@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ox2:forms',
   summary: 'TESTING_DO_NOT_USE Form components',
-  version: '1.2.1',
+  version: '1.3.0',
   git: ' /* Fill me in! */ '
 });
 
