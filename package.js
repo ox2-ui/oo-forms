@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ox2:forms',
   summary: 'TESTING_DO_NOT_USE Form components',
-  version: '1.3.0',
+  version: '1.4.0',
   git: ' /* Fill me in! */ '
 });
 
@@ -13,11 +13,12 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   // Core
   api.use([
-    'templating'
+    'templating',
+    'less'
     ]);
   // 3rd party
   api.use([
-    'lauricio:less-autoprefixer@2.5.0_3','mquandalle:jade@0.4.1','vazco:universe-html-purifier@1.2.3'
+    'mquandalle:jade@0.4.9','vazco:universe-html-purifier@1.2.3'
     ]);
   api.addFiles('lib/oo-forms.jade', C);
   api.addFiles('lib/oo-forms.js', C);
