@@ -25,7 +25,7 @@ htmljs@1.0.7
 id-map@1.0.5
 jquery@1.11.6
 less@2.5.6
-local-test:ox2:forms@1.7.2
+local-test:ox2:forms@1.7.3
 logging@1.0.10
 meteor@1.1.12
 minifier-js@1.1.9
@@ -40,7 +40,7 @@ mquandalle:jade-compiler@0.4.5
 npm-mongo@1.4.41
 observe-sequence@1.0.9
 ordered-dict@1.0.5
-ox2:forms@1.7.2
+ox2:forms@1.7.3
 ox2:inject-style@1.0.0
 promise@0.6.5
 random@1.0.7
