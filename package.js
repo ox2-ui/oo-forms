@@ -18,7 +18,7 @@ Package.onUse(function(api) {
     ]);
   // 3rd party
   api.use([
-    'mquandalle:jade@0.4.9','vazco:universe-html-purifier@1.2.3', 'ox2:inject-style@1.0.0'
+    'mquandalle:jade@0.4.9', 'ox2:inject-style@1.0.0'
     ]);
   api.addFiles('lib/oo-forms.jade', C);
   api.addFiles('lib/oo-forms.js', C);
