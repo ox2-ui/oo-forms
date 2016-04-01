@@ -22,7 +22,7 @@ Package.onUse(function(api) {
     ]);
   api.addFiles('lib/oo-forms.jade', C);
   api.addFiles('lib/oo-forms.js', C);
-  api.addFiles('lib/oo-forms-theming.js', C);
+  // api.addFiles('lib/oo-forms-theming.js', C);
   api.addFiles('lib/oo-forms.less', C);
 });
 
