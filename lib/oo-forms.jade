@@ -94,29 +94,17 @@ template(name="ooSelect")
 template(name="ooMultiSelect")
   +ooMultiSelectButton
   if innner
-    +each selectData
+    +each chechIfArray selectData
       div(class="{{helperClass}}")
         +Template.dynamic template=templateName
   else
-    +each selectData
+    +each chechIfArray selectData
       +Template.dynamic template=templateName
 
 template(name="ooMultiSelectButton")
   div(item="inside-form no-bottom border:solid" oo-Color="")
     div(item-title="") {{btnTitle}}
     button.js-openSelectModal(btn="small action raised") {{btnName}}
-
-
-//- inline, btnName
-template(name="ooMultiSelectFamous")
-  +Surface size='[undefined,true]' template='ooMultiSelectButton'
-  if innner
-    +SequentialLayout
-      +famousEach selectData
-        +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
-  else
-    +famousEach selectData
-      +Surface size='[undefined,true]' template=templateName class="{{helperClass}}"
 
 
 template(name="ooMonthSlider")
