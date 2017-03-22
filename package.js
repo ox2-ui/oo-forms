@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ox2:forms',
   summary: 'DO NOT USE',
-  version: '3.2.0',
+  version: '3.3.0',
   git: ' /* Fill me in! */ '
 });
 
@@ -13,6 +13,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   // Core
   api.use([
+    'ecmascript',
     'templating',
     'less'
     ]);
