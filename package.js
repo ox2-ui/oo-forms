@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ox2:forms',
   summary: 'DO NOT USE',
-  version: '4.1.0',
+  version: '4.2.0',
   git: ' /* Fill me in! */ '
 });
 
